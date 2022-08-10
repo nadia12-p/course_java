@@ -8,15 +8,44 @@ public class Main {
         InputStreamReader capturarTeclado = new InputStreamReader(System.in);
         BufferedReader buffer = new BufferedReader(capturarTeclado);
 
-        System.out.println("Ingrese su edad:");
-        String strEdad = buffer.readLine();
+        System.out.println("Ingrese un numero:");
+        String strNum1 = buffer.readLine();
+        Integer num1 = Integer.parseInt(strNum1);
 
-        Integer edad = Integer.parseInt(strEdad);
+        System.out.println("Ingrese otro numero:");
+        String strNum2 = buffer.readLine();
+        Integer num2 = Integer.parseInt(strNum2);
 
-        if (edad >=18) {
-            System.out.println("Es mayor de edad");
-        } else {
-            System.out.println("Es menor de edad");
+        System.out.println("Ingrese otro numero:");
+        String strNum3 = buffer.readLine();
+        Integer num3 = Integer.parseInt(strNum3);
+
+        Integer numMenor = 0;
+
+        if (num3 > num1 && num2 > num1) {
+            numMenor = num1;
         }
+        if (num3 > num2 && num1 > num2) {
+            numMenor = num2;
+        }
+        if (num2 > num3 && num1 > num3) {
+            numMenor = num3;
+        }
+
+        Integer numMayor = 0;
+
+        if (num3 < num1 && num2 < num1) {
+            numMayor = num1;
+        }
+        if (num3 < num2 && num1 < num2) {
+            numMayor = num2;
+        }
+        if (num2 < num3 && num1 < num3) {
+            numMayor = num3;
+        }
+
+        System.out.println("El numero mas grande es: " + numMayor);
+        System.out.println("El numero mas chico es: " + numMenor);
+
     }
 }
